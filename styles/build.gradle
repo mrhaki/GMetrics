@@ -1,0 +1,14 @@
+apply plugin: 'idea'
+
+stylesDir = 'styles'
+
+task generateDefault << {
+    ant.xslt style: "$stylesDir/default.xslt", out: "$buildDir/default.html", in: 'sample/gmetrics-report.xml'
+    ant.copy(todir: buildDir) {
+        fileset(dir: stylesDir) {
+            include name: 'default.css'
+            include name: '*.png'
+        }
+    }
+
+}

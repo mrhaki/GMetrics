@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<GMetrics url='http://www.gmetrics.org' version='GMetrics 0.3'>
+    <Report timestamp='Jan 11, 2011 12:52:37 PM'/>
+    <Project title='Sample GMetric Report'>
+        <SourceDirectory>src/main/groovy</SourceDirectory>
+    </Project>
+    <PackageSummary>
+        <MetricResult name='ABC' average='3.3' maximum='4.1' minimum='2.2' total='6.2'/>
+        <MetricResult name='CyclomaticComplexity' average='1.0' maximum='1' minimum='1' total='2'/>
+        <MetricResult name='MethodLineCount' average='3.0' maximum='3' minimum='3' total='3'/>
+        <MetricResult name='ClassLineCount' average='9.0' maximum='13' minimum='5' total='18'/>
+    </PackageSummary>
+    <Package path='com'>
+        <MetricResult name='ABC' average='3.3' maximum='4.1' minimum='2.2' total='6.2'/>
+        <MetricResult name='CyclomaticComplexity' average='1.0' maximum='1' minimum='1' total='2'/>
+        <MetricResult name='MethodLineCount' average='3.0' maximum='3' minimum='3' total='3'/>
+        <MetricResult name='ClassLineCount' average='9.0' maximum='13' minimum='5' total='18'/>
+    </Package>
+    <Package path='com/mrhaki'>
+        <MetricResult name='ABC' average='3.3' maximum='4.1' minimum='2.2' total='6.2'/>
+        <MetricResult name='CyclomaticComplexity' average='1.0' maximum='1' minimum='1' total='2'/>
+        <MetricResult name='MethodLineCount' average='3.0' maximum='3' minimum='3' total='3'/>
+        <MetricResult name='ClassLineCount' average='9.0' maximum='13' minimum='5' total='18'/>
+    </Package>
+    <Package path='com/mrhaki/app'>
+        <MetricResult name='ABC' average='3.3' maximum='4.1' minimum='2.2' total='6.2'/>
+        <MetricResult name='CyclomaticComplexity' average='1.0' maximum='1' minimum='1' total='2'/>
+        <MetricResult name='MethodLineCount' average='3.0' maximum='3' minimum='3' total='3'/>
+        <MetricResult name='ClassLineCount' average='9.0' maximum='13' minimum='5' total='18'/>
+        <Class name='com.mrhaki.app.App'>
+            <MetricResult name='ABC' average='4.1' maximum='4.1' minimum='4.1' total='4.1'/>
+            <MetricResult name='CyclomaticComplexity' average='1.0' maximum='1' minimum='1' total='1'/>
+            <Method name='run'>
+                <MetricResult name='ABC' average='4.1' maximum='4.1' minimum='4.1' total='4.1'/>
+                <MetricResult name='CyclomaticComplexity' average='1' maximum='1' minimum='1' total='1'/>
+            </Method>
+        </Class>
+        <Class name='com.mrhaki.app.Person'>
+            <MetricResult name='ClassLineCount' average='5' maximum='5' minimum='5' total='5'/>
+        </Class>
+        <Class name='com.mrhaki.app.PersonService'>
+            <MetricResult name='ABC' average='2.2' maximum='2.2' minimum='2.2' total='2.2'/>
+            <MetricResult name='CyclomaticComplexity' average='1.0' maximum='1' minimum='1' total='1'/>
+            <MetricResult name='MethodLineCount' average='3.0' maximum='3' minimum='3' total='3'/>
+            <MetricResult name='ClassLineCount' average='13' maximum='13' minimum='13' total='13'/>
+            <Method name='findByNickname'>
+                <MetricResult name='ABC' average='2.2' maximum='2.2' minimum='2.2' total='2.2'/>
+                <MetricResult name='CyclomaticComplexity' average='1' maximum='1' minimum='1' total='1'/>
+                <MetricResult name='MethodLineCount' average='3' maximum='3' minimum='3' total='3'/>
+            </Method>
+        </Class>
+    </Package>
+    <Metrics>
+        <Metric name='ABC'>
+            <Description>
+                <![CDATA[Measures size and complexity of source code. See http://c2.com/cgi/wiki?AbcMetric]]></Description>
+        </Metric>
+        <Metric name='ClassLineCount'>
+            <Description><![CDATA[Measures the number of lines in each class or interface.]]></Description>
+        </Metric>
+        <Metric name='CyclomaticComplexity'>
+            <Description>
+                <![CDATA[Measures the (McCabe) Cyclomatic Complexity of source code. See http://en.wikipedia.org/wiki/Cyclomatic_complexity.]]></Description>
+        </Metric>
+        <Metric name='MethodLineCount'>
+            <Description><![CDATA[Measures the number of lines in each method.]]></Description>
+        </Metric>
+    </Metrics>
+</GMetrics>

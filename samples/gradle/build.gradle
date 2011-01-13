@@ -1,0 +1,59 @@
+apply plugin: 'groovy'
+apply plugin: 'idea'
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    gmetrics
+}
+
+dependencies {
+    groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.6'
+    gmetrics(group: 'org.gmetrics', name: 'GMetrics', version: '0.3')
+}
+
+sourceSets.allObjects { SourceSet set ->
+    tasks.add(name: "${set.getTaskName('gmetrics', null)}") {
+        description = "Runs GMetrics against the ${set.name} Groovy source code."
+        logging.captureStandardOutput(LogLevel.INFO);
+        ant.taskdef(name: 'gmetrics', classname: 'org.gmetrics.ant.GMetricsTask', classpath: configurations.gmetrics.asPath)
+        ant.gmetrics(metricSetFile: 'file:config/gmetrics/metricset.groovy') {
+            report(type: 'org.gmetrics.report.XmlReportWriter') {
+                option name: 'outputFile', value: 'build/reports/gmetrics/GMetricsReport.xml'
+                option name: 'title', value: 'Sample'
+            }
+            fileset(dir: 'src/main/groovy') {
+                include name: "**/**"
+            }
+//            set.allGroovy.addToAntBuilder(ant, 'fileset', FileCollection.AntType.FileSet)
+        }
+        //reportFile = new File(codeNarcReportsDir, "${set.name}.xml")
+        //source = set.allGroovy
+        //ignoreFailures = true
+    }
+}
+/*
+class CodeNarcXmlReport extends org.gradle.api.plugins.quality.CodeNarc {
+    @TaskAction
+    public void check() {
+        getLogging().captureStandardOutput(LogLevel.INFO);
+        ant.project.addTaskDefinition('codenarc', CodeNarcTask)
+        try {
+            ant.codenarc(ruleSetFiles: "file:$configFile", maxPriority1Violations: 0, maxPriority2Violations: 0, maxPriority3Violations: 0) {
+                report(type: 'xml', toFile: reportFile, title: 'Sample Groovy Project by mrhaki')
+                source.addToAntBuilder(ant, 'fileset', FileCollection.AntType.FileSet)
+            }
+        } catch (org.apache.tools.ant.BuildException e) {
+            if (e.message.matches('Exceeded maximum number of priority \\d* violations.*')) {
+                if (ignoreFailures) {
+                    return
+                }
+                throw new GradleException("CodeNarc check violations were found in $source. See the report at $reportFile.", e)
+            }
+            throw e
+        }
+    }
+}
+*/
