@@ -40,12 +40,12 @@
         </Class>
         <Class name='com.mrhaki.app.PersonService'>
             <MetricResult name='ABC' average='2.2' maximum='2.2' minimum='2.2' total='2.2'/>
-            <MetricResult name='CyclomaticComplexity' average='1.0' maximum='1' minimum='1' total='1'/>
+            <MetricResult name='CyclomaticComplexity' average='2.0' maximum='2' minimum='2' total='2'/>
             <MetricResult name='MethodLineCount' average='3.0' maximum='3' minimum='3' total='3'/>
             <MetricResult name='ClassLineCount' average='13' maximum='13' minimum='13' total='13'/>
             <Method name='findByNickname'>
                 <MetricResult name='ABC' average='2.2' maximum='2.2' minimum='2.2' total='2.2'/>
-                <MetricResult name='CyclomaticComplexity' average='1' maximum='1' minimum='1' total='1'/>
+                <MetricResult name='CyclomaticComplexity' average='2' maximum='2' minimum='2' total='2'/>
                 <MetricResult name='MethodLineCount' average='3' maximum='3' minimum='3' total='3'/>
             </Method>
         </Class>
