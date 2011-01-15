@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <GMetrics url='http://www.gmetrics.org' version='GMetrics 0.3'>
     <Report timestamp='Jan 11, 2011 12:52:37 PM'/>
-    <Project title='Sample GMetric Report'>
+    <Project title='Sample GMetrics Report'>
         <SourceDirectory>src/main/groovy</SourceDirectory>
     </Project>
     <PackageSummary>
